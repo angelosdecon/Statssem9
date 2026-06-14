@@ -11,372 +11,91 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #1a1a2e;
-  --red: #e94560;
-  --cream: #faf8f3;
-  --white: #ffffff;
-  --mid: #6b7280;
-  --light: #f3f4f6;
-  --border: #e5e7eb;
-  --blue: #2563eb;
-  --green: #059669;
-  --radius: 10px;
-  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  --ink: #1a1a2e; --red: #e94560; --cream: #faf8f3;
+  --white: #ffffff; --mid: #6b7280; --light: #f3f4f6;
+  --border: #e5e7eb; --blue: #2563eb; --green: #059669;
+  --radius: 10px; --shadow: 0 2px 12px rgba(0,0,0,0.07);
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  color: var(--ink);
-  background: var(--cream);
-  line-height: 1.6;
-}
-
-header {
-  background: var(--ink);
-  padding: 0;
-}
-
-.header-top {
-  padding: 12px 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
+body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--ink); background: var(--cream); line-height: 1.6; }
+header { background: var(--ink); }
+.header-top { padding: 12px 40px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; }
 .header-top .soas { font-size: 11px; color: var(--red); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; }
 .header-top .module { font-size: 11px; color: rgba(255,255,255,0.4); }
-
-.header-hero {
-  padding: 32px 40px 28px;
-}
-
-.header-hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--white);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.header-hero p {
-  color: rgba(255,255,255,0.55);
-  font-size: 0.9rem;
-  font-weight: 300;
-  max-width: 600px;
-}
-
-.webr-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
+.header-hero { padding: 32px 40px 28px; }
+.header-hero h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+.header-hero p { color: rgba(255,255,255,0.55); font-size: 0.9rem; font-weight: 300; max-width: 600px; }
+.webr-status { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 7px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
 .webr-status.loading { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
 .webr-status.ready { background: rgba(5,150,105,0.15); color: #10b981; border: 1px solid rgba(5,150,105,0.3); }
 .webr-status.error { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
-
-.status-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  animation: pulse 1.5s infinite;
-}
+.status-dot { width: 8px; height: 8px; border-radius: 50%; animation: pulse 1.5s infinite; }
 .loading .status-dot { background: #fbbf24; }
 .ready .status-dot { background: #10b981; animation: none; }
 .error .status-dot { background: #ef4444; animation: none; }
-
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px;
-}
-
-.step-card {
-  background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  margin-bottom: 28px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.step-header {
-  padding: 18px 24px;
-  background: var(--light);
-  border-bottom: 1.5px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.step-num {
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--white);
-  font-size: 0.82rem;
-  font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-
-.step-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--ink);
-  flex: 1;
-}
-
+main { max-width: 1000px; margin: 0 auto; padding: 40px; }
+.step-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); margin-bottom: 28px; box-shadow: var(--shadow); overflow: hidden; }
+.step-header { padding: 18px 24px; background: var(--light); border-bottom: 1.5px solid var(--border); display: flex; align-items: center; gap: 14px; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: var(--white); font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); flex: 1; }
 .step-body { padding: 20px 24px; }
-
-.step-desc {
-  font-size: 0.9rem;
-  color: var(--mid);
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
-
-.step-desc code {
-  background: var(--light);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  color: var(--ink);
-}
-
-/* HINT SYSTEM */
-.hint-system {
-  margin-bottom: 16px;
-}
-
-.hint-bar {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.hint-btn {
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--mid);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s;
-}
-
-.hint-btn:hover { border-color: var(--blue); color: var(--blue); }
+.step-desc { font-size: 0.9rem; color: var(--mid); margin-bottom: 16px; line-height: 1.7; }
+.step-desc code { background: var(--light); padding: 1px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--ink); }
+.hint-system { margin-bottom: 16px; }
+.hint-bar { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+.hint-btn { padding: 6px 14px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--white); font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; color: var(--mid); cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; }
+.hint-btn:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); }
 .hint-btn.active { background: var(--blue); border-color: var(--blue); color: white; }
 .hint-btn.unlocked { border-color: var(--green); color: var(--green); }
-.hint-btn.unlocked:hover { background: var(--green); color: white; }
-
-.timer-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  background: rgba(37,99,235,0.1);
-  color: var(--blue);
-  padding: 2px 7px;
-  border-radius: 10px;
-}
-
-.hint-content {
-  display: none;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 0.87rem;
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-
+.hint-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.timer-badge { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: rgba(37,99,235,0.1); color: var(--blue); padding: 2px 7px; border-radius: 10px; }
+.hint-content { display: none; padding: 12px 16px; border-radius: 8px; font-size: 0.87rem; line-height: 1.7; margin-bottom: 10px; }
 .hint-content.show { display: block; }
-.hint-content.hint-1 { background: #eff6ff; border-left: 3px solid var(--blue); color: #1e40af; }
-.hint-content.hint-2 { background: #f0fdf4; border-left: 3px solid var(--green); color: #065f46; }
-.hint-content.hint-3 { background: #fff7ed; border-left: 3px solid #f97316; color: #9a3412; }
-
-.hint-content code {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  background: rgba(0,0,0,0.07);
-  padding: 1px 5px;
-  border-radius: 3px;
-}
-
-.hint-content pre {
-  background: #1e1e2e;
-  color: #a6e3a1;
-  padding: 12px 14px;
-  border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  margin-top: 8px;
-  overflow-x: auto;
-  line-height: 1.6;
-}
-
-/* CODE EDITOR */
-.editor-wrap {
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.editor-toolbar {
-  background: #2d2d2d;
-  padding: 6px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.editor-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: #aaa;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.btn-run {
-  padding: 5px 14px;
-  background: var(--green);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.btn-run:hover { background: #047857; }
+.hint-1 { background: #eff6ff; border-left: 3px solid var(--blue); color: #1e40af; }
+.hint-2 { background: #f0fdf4; border-left: 3px solid var(--green); color: #065f46; }
+.hint-3 { background: #fff7ed; border-left: 3px solid #f97316; color: #9a3412; }
+.hint-content code { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; background: rgba(0,0,0,0.07); padding: 1px 5px; border-radius: 3px; }
+.hint-content pre { background: #1e1e2e; color: #a6e3a1; padding: 12px 14px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; margin-top: 8px; overflow-x: auto; line-height: 1.6; white-space: pre-wrap; }
+.editor-wrap { border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+.editor-toolbar { background: #2d2d2d; padding: 6px 12px; display: flex; align-items: center; justify-content: space-between; }
+.editor-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 0.08em; }
+.btn-run { padding: 5px 14px; background: var(--green); color: white; border: none; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 5px; }
+.btn-run:hover:not(:disabled) { background: #047857; }
 .btn-run:disabled { opacity: 0.5; cursor: not-allowed; }
-
-.CodeMirror {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  height: auto;
-  min-height: 80px;
-  max-height: 300px;
-}
-
+.CodeMirror { font-family: 'JetBrains Mono', monospace; font-size: 13px; height: auto; min-height: 80px; }
 .CodeMirror-scroll { min-height: 80px; }
-
-/* OUTPUT */
-.output-area {
-  background: #1e1e2e;
-  border-radius: 8px;
-  padding: 14px 16px;
-  min-height: 48px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  color: #cdd6f4;
-  line-height: 1.6;
-  white-space: pre-wrap;
-  word-break: break-word;
-  display: none;
-}
-
+.output-area { background: #1e1e2e; border-radius: 8px; padding: 14px 16px; min-height: 48px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #cdd6f4; line-height: 1.6; white-space: pre-wrap; word-break: break-word; display: none; margin-bottom: 8px; }
 .output-area.show { display: block; }
 .output-area.error-out { color: #f38ba8; }
 .output-area.success-out { color: #a6e3a1; }
-
-.output-plot {
-  margin-top: 12px;
-  display: none;
-  text-align: center;
-}
-
+.output-plot { margin-top: 8px; display: none; text-align: center; }
 .output-plot.show { display: block; }
 .output-plot img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); }
-
-/* PROGRESS */
-.progress-bar-wrap {
-  background: var(--light);
-  border-radius: 20px;
-  height: 6px;
-  margin-bottom: 28px;
-  overflow: hidden;
-}
-
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--blue), var(--green));
-  border-radius: 20px;
-  transition: width 0.4s ease;
-  width: 0%;
-}
-
-.progress-label {
-  font-size: 0.8rem;
-  color: var(--mid);
-  margin-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* INFO BOX */
-.info-box {
-  background: rgba(37,99,235,0.06);
-  border: 1px solid rgba(37,99,235,0.2);
-  border-radius: 8px;
-  padding: 14px 16px;
-  font-size: 0.87rem;
-  color: #1e40af;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-
-.info-box code {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  background: rgba(37,99,235,0.1);
-  padding: 1px 5px;
-  border-radius: 3px;
-}
+.progress-bar-wrap { background: var(--light); border-radius: 20px; height: 6px; margin-bottom: 28px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--green)); border-radius: 20px; transition: width 0.4s ease; width: 0%; }
+.progress-label { font-size: 0.8rem; color: var(--mid); margin-bottom: 8px; display: flex; justify-content: space-between; }
+.info-box { background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.2); border-radius: 8px; padding: 14px 16px; font-size: 0.87rem; color: #1e40af; margin-bottom: 20px; line-height: 1.6; }
+.info-box code { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; background: rgba(37,99,235,0.1); padding: 1px 5px; border-radius: 3px; }
 </style>
 </head>
 <body>
-
 <header>
   <div class="header-top">
-    <span class="soas">SOAS University of London · Department of Economics</span>
+    <span class="soas">SOAS University of London &middot; Department of Economics</span>
     <span class="module">Principles of Statistics and Econometrics with R</span>
   </div>
   <div class="header-hero">
     <h1>Seminar 9: Introduction to Regression Analysis</h1>
-    <p>Interactive R environment — write and run code directly in your browser. Use hints if you get stuck.</p>
+    <p>Interactive R environment &mdash; write and run code directly in your browser. Use hints if you get stuck.</p>
     <div class="webr-status loading" id="webr-status">
       <div class="status-dot"></div>
-      <span id="webr-status-text">Loading R environment... (this may take 20–30 seconds)</span>
+      <span id="webr-status-text">Starting R environment&hellip; please wait (may take up to 2 minutes)</span>
     </div>
   </div>
 </header>
 
 <main>
-
   <div class="progress-label">
     <span>Progress</span>
     <span id="progress-text">0 / 18 steps completed</span>
@@ -384,15 +103,127 @@ main {
   <div class="progress-bar-wrap">
     <div class="progress-bar-fill" id="progress-bar"></div>
   </div>
-
   <div class="info-box">
-    The dataset <code>gini_data</code> is pre-loaded and available in every code cell. You do not need to import it manually — just start coding! Each step builds on the previous one, so run them in order.
+    The dataset <code>gini_data</code> is pre-loaded in every code cell &mdash; no import needed. Run steps in order as each builds on the previous. Use <strong>Ctrl+Enter</strong> (or <strong>Cmd+Enter</strong> on Mac) to run code quickly.
   </div>
-
-  <!-- STEPS WILL BE INJECTED HERE -->
   <div id="steps-container"></div>
-
 </main>
+
+<script>
+// CSV data encoded as base64 to avoid syntax issues
+const CSV_B64 = "Q291bnRyeSBOYW1lLENvdW50cnkgQ29kZSxHaW5pIGluZGV4IGluIDIwMjEsIk1vcnRhbGl0eSByYXRlLCBpbmZhbnQgKHBlciAxLDAwMCBsaXZlIGJpcnRocykgaW4gMjAyMSIsIkdEUCBwZXIgY2FwaXRhLCBQUFAgKGN1cnJlbnQgaW50ZXJuYXRpb25hbCAkKSBpbiAyMDIxIgpBcnViYSxBQlcsLCwzODIyNi4xNDYxNgpBZnJpY2EgRWFzdGVybiBhbmQgU291dGhlcm4sQUZFLCw0MS44MjM4MjA2LDM5NjcuNDAwNjI5CkFmZ2hhbmlzdGFuLEFGRywsNDYuMSwyMTM4Ljg3MDI0NwpBZnJpY2EgV2VzdGVybiBhbmQgQ2VudHJhbCxBRlcsLDYwLjY3OTMzNDczLDQ3NTYuMzA4NDE5CkFuZ29sYSxBR08sLDQ3LDc0MTQuMjc4OTU4CkFsYmFuaWEsQUxCLCw4LjQsMTYyNjEuODA0NTUKQW5kb3JyYSxBTkQsLDIuNyw1ODgyOS44NTAwNwpBcmFiIFdvcmxkLEFSQiwsMjQuNTgwNTAyNzMsMTU2NDAuMTU3MDQKVW5pdGVkIEFyYWIgRW1pcmF0ZXMsQVJFLCw0LjUsNjg5MTIuNTQ1NTUKQXJnZW50aW5hLEFSRyw0Mi40LDguNiwyNjA4Ni44MDIzNgpBcm1lbmlhLEFSTSwyNy45LDkuNiwxNjg5OS4wNzA5MgpBbWVyaWNhbiBTYW1vYSxBU00sLCwKQW50aWd1YSBhbmQgQmFyYnVkYSxBVEcsLDguMywyNTQ5My4xMjk1NQpBdXN0cmFsaWEsQVVTLCwzLjIsNTc0MDYuMTc4NzYKQXVzdHJpYSxBVVQsMzAuNywyLjcsNjM0MjEuMjAzNTkKQXplcmJhaWphbixBWkUsLDE2LjgsMjAxMTEuMzc1NwpCdXJ1bmRpLEJESSwsMzcuNSw4NjQuMjgwNzMyNwpCZWxnaXVtLEJFTCwyNi42LDMuMSw2MjEyMy4xNjEzMgpCZW5pbixCRU4sMzQuNCw1NSwzNTc1LjMxMTQ4NwpCdXJraW5hIEZhc28sQkZBLDM3LjQsNTEuMiwyNDY3Ljc0MDYKQmFuZ2xhZGVzaCxCR0QsLDI0LjksNzM2Ni40ODk5NzEKQnVsZ2FyaWEsQkdSLDM5LDUuMiwyOTQwNC45NjA1MQpCYWhyYWluLEJIUiwsNS43LDU0MzUxLjgzNjA4CiJCYWhhbWFzLCBUaGUiLEJIUywsMTEuMywyODUxMC45MDk0OQpCb3NuaWEgYW5kIEhlcnplZ292aW5hLEJJSCwsNS4zLDE4Mzk2LjQ2OTA5CkJlbGFydXMsQkxSLCwyLDI3NjExLjE4MDExCkJlbGl6ZSxCTFosLDkuOSwxMTU1OS44OTA2CkJlcm11ZGEsQk1VLCwsOTM1NTUuNTE3NDUKQm9saXZpYSxCT0wsNDAuOSwyMC4zLDkzNDIuOTcxODQ0CkJyYXppbCxCUkEsNTIuOSwxMi44LDE3NjcyLjkxNjgKQmFyYmFkb3MsQlJCLCwxMC40LDE0NzUyLjM3MzcKQnJ1bmVpIERhcnVzc2FsYW0sQlJOLCw4LjYsNzkzNjQuMDk0NTYKQmh1dGFuLEJUTiwsMjAuNywxMzQyMy40Mjg4NwpCb3Rzd2FuYSxCV0EsLDMyLjEsMTY2NjMuODY4NTQKQ2VudHJhbCBBZnJpY2FuIFJlcHVibGljLENBRiw0Myw3NS4xLDEwNTcuMTk0Mzk1CkNhbmFkYSxDQU4sLDQuNCw1NTc4MS42OTkwMwpDZW50cmFsIEV1cm9wZSBhbmQgdGhlIEJhbHRpY3MsQ0VCLCwzLjkyMjQ4OTk0NCwzOTkwMi4yMTU4MwpTd2l0emVybGFuZCxDSEUsLDMuNSw4MTYwMy4yMDczMQpDaGFubmVsIElzbGFuZHMsQ0hJLCwsCkNoaWxlLENITCwsNS43LDI5MDUwLjA4MDc5CkNoaW5hLENITiwzNS43LDUuMSwyMDQwNi43Mjk2NgpDb3RlIGQnSXZvaXJlLENJViwzNS4zLDUzLjgsNjUyMC43MzExNgpDYW1lcm9vbixDTVIsNDIuMiw0OC4zLDQ3NDEuNzYxNzcKIkNvbmdvLCBEZW0uIFJlcC4iLENPRCwsNjEuOSwxMzU4LjIwNDcxNwoiQ29uZ28sIFJlcC4iLENPRywsMzIuMSw2MzIzLjcxNzU3OQpDb2xvbWJpYSxDT0wsNTUuMSwxMSwxNzU4Ny4yMzE3OQpDb21vcm9zLENPTSwsMzkuMywzNDI2Ljc1NzczNApDYWJvIFZlcmRlLENQViwsMTEsNjc1My42OTE2MwpDb3N0YSBSaWNhLENSSSw0OC43LDYuOSwyMzcwMC4yOTYxMwpDYXJpYmJlYW4gc21hbGwgc3RhdGVzLENTUywsMTYuMzY5MzEwNjIsMTk3NTcuMTIyNDMKQ3ViYSxDVUIsLDUuOSwKQ3VyYWNhbyxDVVcsLCwyNTE2My45OTM0NQpDYXltYW4gSXNsYW5kcyxDWU0sLCw3NjI5Ni45NDA2OApDeXBydXMsQ1lQLDMxLjMsMi43LDQ4NDY2Ljg0Mzc1CkN6ZWNoaWEsQ1pFLDI2LjIsMi4yLDQ4NDE4LjExNTc5Ckdlcm1hbnksREVVLCwzLjEsNjE5MzkuNjUxNTkKRGppYm91dGksREpJLCw0NS41LDYwMzIuMjc3OTU2CkRvbWluaWNhLERNQSwsMzAuMywxNDQ3Mi4yODU4NgpEZW5tYXJrLEROSywyOC4zLDMuMSw2OTg3OC45MzQ4MQpEb21pbmljYW4gUmVwdWJsaWMsRE9NLDM4LjUsMjcuNCwyMTkyMy4zMDE5NApBbGdlcmlhLERaQSwsMTkuMiwxNDY5MC45MTYyMwpFYXN0IEFzaWEgJiBQYWNpZmljIChleGNsdWRpbmcgaGlnaCBpbmNvbWUpLEVBUCwsMTIuNjQ4MjY5MjIsMTc3MDQuMjg1NgpFYXJseS1kZW1vZ3JhcGhpYyBkaXZpZGVuZCxFQVIsLDI2LjYzODI5NDM0LDEwNzUyLjAzNQpFYXN0IEFzaWEgJiBQYWNpZmljLEVBUywsMTIsMjEyMDcuODYxNjcKRXVyb3BlICYgQ2VudHJhbCBBc2lhIChleGNsdWRpbmcgaGlnaCBpbmNvbWUpLEVDQSwsMTEuODczOTM2NzQsMjE5NTAuODY4MQpFdXJvcGUgJiBDZW50cmFsIEFzaWEsRUNTLCw2LjYsNDI0NjQuOTY0NjQKRWN1YWRvcixFQ1UsNDUuOCwxMC44LDEzNDUyLjAwODc3CiJFZ3lwdCwgQXJhYiBSZXAuIixFR1ksLDE2LDE1ODIwLjY3MTM4CkV1cm8gYXJlYSxFTVUsLDIuOTgxMDEzMjg0LDU0MjA4LjEzMDA4CkVyaXRyZWEsRVJJLCwyOC45LApTcGFpbixFU1AsMzMuOSwyLjYsNDM2MjAuNjA0MDYKRXN0b25pYSxFU1QsMzEuOCwxLjUsNDQ2NTEuOTk5MjIKRXRoaW9waWEsRVRILCwzNSwyNjI4LjM0MzQ2NApFdXJvcGVhbiBVbmlvbixFVVUsLDMuMTYzMzIzOTU2LDUxOTE2LjgzMTQ1CkZyYWdpbGUgYW5kIGNvbmZsaWN0IGFmZmVjdGVkIHNpdHVhdGlvbnMsRkNTLCw1MS4yNzg2NDQxNCw1MjI4LjgwNTYzCkZpbmxhbmQsRklOLDI3LjcsMS45LDU3Nzg4LjkwMzQ2CkZpamksRkpJLCwyMy4zLDEwNTkzLjkxMjczCkZyYW5jZSxGUkEsMzEuNSwzLjMsNTM4MzQuNzk5MwpGYXJvZSBJc2xhbmRzLEZSTywsLDY4MTI0LjE4NTcKIk1pY3JvbmVzaWEsIEZlZC4gU3RzLiIsRlNNLCwyMS4xLDM4NzAuOTMyNDA0CkdhYm9uLEdBQiwsMjkuNSwxOTU1Mi4zNjI1MwpVbml0ZWQgS2luZ2RvbSxHQlIsMzIuNCwzLjYsNTI4NDEuNjM0NTkKR2VvcmdpYSxHRU8sMzQuMiw4LjQsMTg5MTUuNjUzNApHaGFuYSxHSEEsLDMyLjUsNjU0NC4yMzgyCkdpYnJhbHRhcixHSUIsLCwKR3VpbmVhLEdJTiwsNjMuNywzNzM1LjA4OTgyNwoiR2FtYmlhLCBUaGUiLEdNQiwsMzMuNywyNzEwLjU1MjQ2MwpHdWluZWEtQmlzc2F1LEdOQiwzMy40LDUwLjEsMjI3OC4wMjMzOTUKRXF1YXRvcmlhbCBHdWluZWEsR05RLCw1Ni43LDE4MTAwLjkxMzkzCkdyZWVjZSxHUkMsMzIuOSwzLjQsMzMwMTguMjU0NDIKR3JlbmFkYSxHUkQsLDE0LjQsMTQzMjUuNTU0ODUKR3JlZW5sYW5kLEdSTCwsLDY4MDg2LjQ2MDEyCkd1YXRlbWFsYSxHVE0sLDE5LjQsMTIxMDYuNDIyNTQKR3VhbSxHVU0sLCwKR3V5YW5hLEdVWSwsMjMsMjMxNzYuMTMzMgpIaWdoIGluY29tZSxISUMsLDQuMiw1NTEwMy4wNjI0NQoiSG9uZyBLb25nIFNBUiwgQ2hpbmEiLEhLRywsLDY1ODg0LjkzNzYzCkhvbmR1cmFzLEhORCwsMTQuMiw2MjA5Ljk0MDM1CkhlYXZpbHkgaW5kZWJ0ZWQgcG9vciBjb3VudHJpZXMgKEhJUEMpLEhQQywsNDUuNTg5NTg0NjQsMjk5My44NTUyCkNyb2F0aWEsSFJWLDI4LjksMy45LDM3MjMyLjU5NTc3CkhhaXRpLEhUSSwsNDUuMSwzMTE0Ljk2MzU0MgpIdW5nYXJ5LEhVTiwyOS4yLDMuMywzODY0Ny45OTgwOApJQlJEIG9ubHksSUJELCwxOC4wOTEzNjMzNCwxNjM1Ni41OTYwNgpJREEgJiBJQlJEIHRvdGFsLElCVCwsMzAuOTIxMjcwNzEsMTMxNTUuODY1OTQKSURBIHRvdGFsLElEQSwsNDYuNTY5NDkzNjgsNDQ2OS4xOTU5OTkKSURBIGJsZW5kLElEQiwsNTUuNTM0OTg3NTksNTYzMi4wNTk5NTgKSW5kb25lc2lhLElETiwzNS41LDE4LjcsMTI4OTcuMTAzMTQKSURBIG9ubHksSURYLCw0Mi4wMTI2MTczLDM5MDkuOTQ4ODc0CklzbGUgb2YgTWFuLElNTiwsLApJbmRpYSxJTkQsMzIuOCwyNi44LDgwODcuOTkzODAzCk5vdCBjbGFzc2lmaWVkLElOWCwsLApJcmVsYW5kLElSTCwzMC4xLDIuOCwxMTQxMjAuNTQ0NQoiSXJhbiwgSXNsYW1pYyBSZXAuIixJUk4sMzUuNSwxMC43LDE1MDQyLjM3NDExCklyYXEsSVJRLCwyMC42LDEyNTk2LjUyNjQ5CkljZWxhbmQsSVNMLCwyLjEsNjE5NjYuNDE2NzcKSXNyYWVsLElTUiwzNy45LDIuOCw0NjEyNi42NDIzMQpJdGFseSxJVEEsMzQuOCwyLjMsNDk5MDEuNjEyMTQKSmFtYWljYSxKQU0sNDAuMiwxNi4yLDk2MTAuOTg5MzM3CkpvcmRhbixKT1IsLDEyLjYsOTExNS4wMTk1MTEKSmFwYW4sSlBOLCwxLjgsNDQ1NDkuMzM4MzQKS2F6YWtoc3RhbixLQVosMjkuMiw4LjksMzM4OTMuODk1NDYKS2VueWEsS0VOLDM4LjcsMzEsNTM2MC4zNjE5MDMKS3lyZ3l6IFJlcHVibGljLEtHWiwyOC44LDE1LjYsNTgwMi4zODg5NzIKQ2FtYm9kaWEsS0hNLCwyMS4xLDQ2NjguMjM3NzgKS2lyaWJhdGksS0lSLCw0NC44LDMwMzYuNDE1MTM2ClN0LiBLaXR0cyBhbmQgTmV2aXMsS05BLCwxMy43LDI2NDIwLjMzNjM4CiJLb3JlYSwgUmVwLiIsS09SLDMyLjksMi41LDQ4NTcxLjQzMjIxCkt1d2FpdCxLV1QsLDcuNSw0OTY2OC45OTc0NwpMYXRpbiBBbWVyaWNhICYgQ2FyaWJiZWFuIChleGNsdWRpbmcgaGlnaCBpbmNvbWUpLExBQywsMTMuNzE4ODYwNDYsMTc3OTIuMDI4MTcKTGFvIFBEUixMQU8sLDMzLjcsODExMS4wNTYwNjcKTGViYW5vbixMQk4sLDE0LjEsMTE4NjAuMDU4NjMKTGliZXJpYSxMQlIsLDU2LjQsMTU1OC43NDIyNDkKTGlieWEsTEJZLCw5LjIsMTgxNzEuNTIyOTcKU3QuIEx1Y2lhLExDQSwsMTYuMSwxODY1MS44NzMyCkxhdGluIEFtZXJpY2EgJiBDYXJpYmJlYW4sTENOLCwxMy45LDE4NTYxLjUzMzIyCkxlYXN0IGRldmVsb3BlZCBjb3VudHJpZXM6IFVOIGNsYXNzaWZpY2F0aW9uLExEQywsNDMuMzM1MDEwNzYsMzY0NS44NzAyMTgKTG93IGluY29tZSxMSUMsLDQ2LjgsMjEyNy4zNDI3MjcKTGllY2h0ZW5zdGVpbixMSUUsLCwKU3JpIExhbmthLExLQSwsNS43LDE0MzE2LjEzNjQ5Ckxvd2VyIG1pZGRsZSBpbmNvbWUsTE1DLCwzNC44LDc2ODQuNTQzNDkKTG93ICYgbWlkZGxlIGluY29tZSxMTVksLDMxLjM5MjA1OTgyLDEyMTIwLjIwOTA3Ckxlc290aG8sTFNPLCw1Ny43LDI1MTYuOTc3NzUzCkxhdGUtZGVtb2dyYXBoaWMgZGl2aWRlbmQsTFRFLCw3Ljg0ODA2Mjc3MiwyMTkwNS43MjEzNApMaXRodWFuaWEsTFRVLDM2LjcsMi45LDQ2NDEwLjA2NzY0Ckx1eGVtYm91cmcsTFVYLDMyLjcsMi4yLDEzNzk0Ny4zNDM5CkxhdHZpYSxMVkEsMzQuMywzLDM2Nzc3Ljg5Mjg1CiJNYWNhbyBTQVIsIENoaW5hIixNQUMsLCw3MzczNC4wODE2MQpTdC4gTWFydGluIChGcmVuY2ggcGFydCksTUFGLCwsCk1vcm9jY28sTUFSLCwxNS40LDg1ODEuMzMwMDc4Ck1vbmFjbyxNQ08sLDIuNCwKTW9sZG92YSxNREEsMjUuNywxMi4zLDE1NjgyLjA3MDMzCk1hZGFnYXNjYXIsTURHLCw0NS40LDE2NDIuMzA0MTYyCk1hbGRpdmVzLE1EViwsNS4xLDE4ODY1LjcxOTMKTWlkZGxlIEVhc3QgJiBOb3J0aCBBZnJpY2EsTUVBLCwxNi44LDE3OTE1LjAwNTU4Ck1leGljbyxNRVgsLDExLjQsMjExMzEuOTE1NzYKTWFyc2hhbGwgSXNsYW5kcyxNSEwsLDI0LjcsNjU3Ny40ODkxNzcKTWlkZGxlIGluY29tZSxNSUMsLDI3LjU2NjY5MDA5LDEzMzExLjM5MzQ4Ck5vcnRoIE1hY2Vkb25pYSxNS0QsLDQuNiwyMjM3MS40OTY3OQpNYWxpLE1MSSwzNS43LDYxLjQsMjM5OS40NjE1MzUKTWFsdGEsTUxULCw1LDUzNDkyLjIwNDg1Ck15YW5tYXIsTU1SLCwzMy41LDUxMzguODg3MjUKTWlkZGxlIEVhc3QgJiBOb3J0aCBBZnJpY2EgKGV4Y2x1ZGluZyBoaWdoIGluY29tZSksTU5BLCwxOC4xNjc0MjcxMiwxMjM0NC40NjM2MwpNb250ZW5lZ3JvLE1ORSwzNC4zLDIuNCwyNDUwOS45MzY0OApNb25nb2xpYSxNTkcsLDEyLjEsMTQ5NTEuMTM2NTcKTm9ydGhlcm4gTWFyaWFuYSBJc2xhbmRzLE1OUCwsLApNb3phbWJpcXVlLE1PWiwsNTAsMTQ0MC40NTk2ODEKTWF1cml0YW5pYSxNUlQsLDMyLjIsNTk4OC4yMDM1NTEKTWF1cml0aXVzLE1VUywsMTMuOSwyMjczNy41NzI5NApNYWxhd2ksTVdJLCwzMC45LDE3MjguODI1Mzk4Ck1hbGF5c2lhLE1ZUyw0MC43LDYuOCwzMDQ1Ni4wOTI5Ck5vcnRoIEFtZXJpY2EsTkFDLCw1LjMsNjk0ODIuNjUxNwpOYW1pYmlhLE5BTSwsMjkuMywxMDc4NS4wODM0MwpOZXcgQ2FsZWRvbmlhLE5DTCwsLApOaWdlcixORVIsMzIuOSw2MSwxNTM4LjQ3MDc0NwpOaWdlcmlhLE5HQSwsNzAuNSw1NjIzLjY2NDA3OApOaWNhcmFndWEsTklDLCwxMy41LDY4NzMuNzMxMTc3Ck5ldGhlcmxhbmRzLE5MRCwyNS43LDMuNCw2NzY5My4zMjY0MwpOb3J3YXksTk9SLCwxLjgsODkyMDkuMTM5NzgKTmVwYWwsTlBMLCwyMy45LDQ0NjEuNDY4Nzg1Ck5hdXJ1LE5SVSwsMjIuOSwxMTM0MC4wNDAxNgpOZXcgWmVhbGFuZCxOWkwsLDMuOSw0ODE5NC4wNDEwNgpPRUNEIG1lbWJlcnMsT0VELCw1LjY1Mzk0NjgyMiw1MDg0NC43NTY0NApPbWFuLE9NTiwsOS4xLDM4OTMwLjk5Mzg0Ck90aGVyIHNtYWxsIHN0YXRlcyxPU1MsLDI0LjYwMDg5MjQzLDI2ODQzLjczNDIzClBha2lzdGFuLFBBSywsNTIuNSw1NTU0LjU4NTcwMQpQYW5hbWEsUEFOLDUwLjksMTIuMiwzMDg5NS44MzIyNQpQZXJ1LFBFUiw0MC4xLDEyLDE1MDI4LjYyNzcKUGhpbGlwcGluZXMsUEhMLDQwLjcsMjIuMSw4Nzk3LjE2ODcxMgpQYWxhdSxQTFcsLDIyLjUsMTU3ODEuOTc5MDUKUGFwdWEgTmV3IEd1aW5lYSxQTkcsLDM0LjUsMzk5Mi45NDEyMjEKUG9sYW5kLFBPTCwyOC41LDMuOCw0MDQ2Mi42ODg3MQpQcmUtZGVtb2dyYXBoaWMgZGl2aWRlbmQsUFJFLCw1MS45NzU1NDMyMiw0MDI5LjkyMDQxMwpQdWVydG8gUmljbyxQUkksLCw0MDU1OS42OTg1NwoiS29yZWEsIERlbS4gUGVvcGxlJ3MgUmVwLiIsUFJLLCwxMi43LApQb3J0dWdhbCxQUlQsMzQuNiwyLjcsMzg3ODMuMDExNTYKUGFyYWd1YXksUFJZLDQyLjksMTUuNSwxNTM2MS4wODQ3NQpXZXN0IEJhbmsgYW5kIEdhemEsUFNFLCwxMi43LDU2NjMuMTIxNjA3ClBhY2lmaWMgaXNsYW5kIHNtYWxsIHN0YXRlcyxQU1MsLDE5LjYzNTk1ODc5LDYyNjcuMjYzODQyClBvc3QtZGVtb2dyYXBoaWMgZGl2aWRlbmQsUFNULCwzLjk5NzU2MDMyNSw1NjE4OS43ODYzCkZyZW5jaCBQb2x5bmVzaWEsUFlGLCwsClFhdGFyLFFBVCwsNC43LDEwODg2NS4xMzc4ClJvbWFuaWEsUk9VLDMzLjksNS4zLDM3OTY5LjE1Mzg5ClJ1c3NpYW4gRmVkZXJhdGlvbixSVVMsMzUuMSw0LjEsMzg5MzguNDk2MDkKUndhbmRhLFJXQSwsMjkuNSwyNzA5LjQ1NzgzClNvdXRoIEFzaWEsU0FTLCwzMS45LDc2MTAuNTAxODk2ClNhdWRpIEFyYWJpYSxTQVUsLDUuNyw0Nzc1NC40MzE0NQpTdWRhbixTRE4sLDM4LjEsMzQyMC40NTE5MDQKU2VuZWdhbCxTRU4sMzYuMiwyOSw0MjU4Ljc4NjI4NApTaW5nYXBvcmUsU0dQLCwxLjksMTMxODY0LjA5MjMKU29sb21vbiBJc2xhbmRzLFNMQiwsMTYuMiwyNzE0LjE5MzE5NgpTaWVycmEgTGVvbmUsU0xFLCw3OC4xLDE2MjMuOTc1NjI0CkVsIFNhbHZhZG9yLFNMViwzOSwxMC42LDEwNzA5Ljc1OTU4ClNhbiBNYXJpbm8sU01SLCwxLjQsNjU3MTcuODkxNTUKU29tYWxpYSxTT00sLDY5LjgsMTQ2MS45Njg3OTIKU2VyYmlhLFNSQiwzMy4xLDQuNiwyMjU3NC4yMzA0NwpTdWItU2FoYXJhbiBBZnJpY2EgKGV4Y2x1ZGluZyBoaWdoIGluY29tZSksU1NBLCw0OS44MTIzNzI0Niw0Mjg0LjU3NzM1ClNvdXRoIFN1ZGFuLFNTRCwsNjMuOCwKU3ViLVNhaGFyYW4gQWZyaWNhLFNTRiwsNDkuOCw0Mjg2LjczNTE2NQpTbWFsbCBzdGF0ZXMsU1NULCwyMi40NDAwNTIwNiwyMjk5NS4zODA4OQpTYW8gVG9tZSBhbmQgUHJpbmNpcGUsU1RQLCwxMS45LDU3MDMuMjQ4MjQzClN1cmluYW1lLFNVUiwsMTUuNCwxODQ0Ny4zMzk5NApTbG92YWsgUmVwdWJsaWMsU1ZLLDI0LjEsNC45LDM3NzkwLjc4NzQ0ClNsb3ZlbmlhLFNWTiwyNC4zLDEuOSw0NjUwMi4wOTc4OQpTd2VkZW4sU1dFLDI5LjgsMi4xLDYzMzc1LjA0NDY1CkVzd2F0aW5pLFNXWiwsNDAuOCwxMDIwMi41MDk2MQpTaW50IE1hYXJ0ZW4gKER1dGNoIHBhcnQpLFNYTSwsLDQxMzY1LjgwNzUxClNleWNoZWxsZXMsU1lDLCwxMi43LDI5OTc5LjgyNzI3ClN5cmlhbiBBcmFiIFJlcHVibGljLFNZUiwsMTguMSwyOTE0LjUzMDU1OQpUdXJrcyBhbmQgQ2FpY29zIElzbGFuZHMsVENBLCw0LjIsMjEyNTMuMDgwNjMKQ2hhZCxUQ0QsLDY1LjcsMTc2NC4zNDgwNzYKRWFzdCBBc2lhICYgUGFjaWZpYyAoSURBICYgSUJSRCBjb3VudHJpZXMpLFRFQSwsMTIuNjQ3NzUxMzYsMTc5MDAuOTM5NzYKRXVyb3BlICYgQ2VudHJhbCBBc2lhIChJREEgJiBJQlJEIGNvdW50cmllcyksVEVDLCw5LjIwOTU1MzQzOSwyOTg4NS42NjI1MQpUb2dvLFRHTywzNy45LDQzLjIsMjY0Ni44MjgwMzkKVGhhaWxhbmQsVEhBLDM0LjksNy4yLDIwMjgwLjkzMzcxClRhamlraXN0YW4sVEpLLCwyNy42LDQwNzQuNTYwMjIzClR1cmttZW5pc3RhbixUS00sLDM1LjgsCkxhdGluIEFtZXJpY2EgJiB0aGUgQ2FyaWJiZWFuIChJREEgJiBJQlJEIGNvdW50cmllcyksVExBLCwxMy45MzU2OTMxNywxODQ3Ni40MzIxOQpUaW1vci1MZXN0ZSxUTFMsLDQyLjksNjk3MC4wMDAyMjEKTWlkZGxlIEVhc3QgJiBOb3J0aCBBZnJpY2EgKElEQSAmIElCUkQgY291bnRyaWVzKSxUTU4sLDE4LjI2MDAxNDM4LDEyNDI1LjYyODkxClRvbmdhLFRPTiwyNy4xLDkuNiw2NzQyLjQ2MTc3NApTb3V0aCBBc2lhIChJREEgJiBJQlJEKSxUU0EsLDMxLjg4NzU3ODAzLDc2MTAuNTAxODk2ClN1Yi1TYWhhcmFuIEFmcmljYSAoSURBICYgSUJSRCBjb3VudHJpZXMpLFRTUywsNDkuODEwODgzNDUsNDI4Ni43MzUxNjUKVHJpbmlkYWQgYW5kIFRvYmFnbyxUVE8sLDE0LjIsMjc2MzEuNjc3ODEKVHVuaXNpYSxUVU4sMzMuNywxMC42LDEyMTU5LjA1NDUzClR1cmtpeWUsVFVSLDQ0LjQsOC42LDMxNjM3LjUzMDU0ClR1dmFsdSxUVVYsLDE3LjksNTA1My43NTA0NDYKVGFuemFuaWEsVFpBLCwzMS4xLDM0NTEuNDQ4MjQyClVnYW5kYSxVR0EsLDMxLjEsMjY4OC4yNjY4MzUKVWtyYWluZSxVS1IsLDcsMTgwNDAuMzQ1NwpVcHBlciBtaWRkbGUgaW5jb21lLFVNQywsMTEuMSwxOTI5Ni41ODk2OQpVcnVndWF5LFVSWSw0MC44LDUuOCwyOTE4Ny40Mjg2OApVbml0ZWQgU3RhdGVzLFVTQSwzOS43LDUuNCw3MTA1NS44NzYxOQpVemJla2lzdGFuLFVaQiwsMTIuNSw4MTYyLjE5NTgxNwpTdC4gVmluY2VudCBhbmQgdGhlIEdyZW5hZGluZXMsVkNULCwxMC42LDE1NjczLjczNzA0CiJWZW5lenVlbGEsIFJCIixWRU4sLDIxLjIsCkJyaXRpc2ggVmlyZ2luIElzbGFuZHMsVkdCLCwxMiwKVmlyZ2luIElzbGFuZHMgKFUuUy4pLFZJUiwsLDQ2MjM4LjA1OTY1ClZpZXQgTmFtLFZOTSwsMTYuNSwxMjIzMC4yNTk2MgpWYW51YXR1LFZVVCwsMTYsMzAwNi41ODAzMQpXb3JsZCxXTEQsLDI4LjYsMTk3MTkuNTE0NjkKU2Ftb2EsV1NNLCwxNC4zLDYwNzQuNjg5ODU1Cktvc292byxYS1gsLDkuMSwxMjM2Mi43MDQ4MQoiWWVtZW4sIFJlcC4iLFlFTSwsMzQuNywKU291dGggQWZyaWNhLFpBRiwsMjcuOCwxNDE3Mi41NDQyNQpaYW1iaWEsWk1CLCwzOS45LDM1MjYuNTA3NDE4ClppbWJhYndlLFpXRSwsMzUuNSwzMjc2LjI2Nzc1Mwo=";
+
+const STEPS = [
+  {num:1, title:"Load Libraries",
+   desc:"Load the R packages needed: <code>dplyr</code>, <code>ggplot2</code>, <code>lmtest</code>, and <code>car</code>.",
+   h1:"Think about what each package provides: data manipulation, plotting, regression testing, and multicollinearity checks. Each comes from a different package.",
+   h2:"Use <code>library(packagename)</code> for each package you need.",
+   h3:"library(dplyr)\nlibrary(ggplot2)\nlibrary(lmtest)\nlibrary(car)",
+   code:"# Load required packages\n"},
+  {num:2, title:"Inspect the Dataset",
+   desc:"The dataset <code>gini_data</code> is already loaded. Show the first few rows, the structure, and the column names.",
+   h1:"Think about three things: what do the first rows look like? What data types are the columns? What are the column names?",
+   h2:"Use <code>head()</code>, <code>str()</code>, and <code>colnames()</code>.",
+   h3:"head(gini_data)\nstr(gini_data)\ncolnames(gini_data)",
+   code:"# Explore the dataset\n"},
+  {num:3, title:"Rename Variables",
+   desc:"The column names are very long. Rename them to: <code>GDP</code>, <code>GINI</code>, and <code>Mortality_Rate</code>.",
+   h1:"You want to replace long column names with shorter ones. Check the current names with colnames() first.",
+   h2:"Use <code>dplyr::rename(data, new_name = old_name)</code>. Then verify with <code>colnames()</code> and <code>summary()</code>.",
+   h3:"gini_data <- dplyr::rename(\n  gini_data,\n  GDP = GDP,\n  GINI = GINI,\n  Mortality_Rate = Mortality_Rate\n)\ncolnames(gini_data)\nsummary(gini_data)",
+   code:"# Rename columns\n"},
+  {num:4, title:"Clean Data for Simple Regression",
+   desc:"Select only <code>GINI</code> and <code>Mortality_Rate</code>, then remove rows with missing values.",
+   h1:"Missing values will cause errors in regression. You need to keep only two columns and drop any rows where either is NA.",
+   h2:"Use <code>subset(data, select = c(...))</code> then <code>na.omit()</code>. Check with <code>summary()</code>.",
+   h3:"data_clean <- subset(gini_data, select = c(GINI, Mortality_Rate))\ndata_clean <- na.omit(data_clean)\nsummary(data_clean)",
+   code:"# Select variables and remove missing values\n"},
+  {num:5, title:"Scatter Plot: Mortality Rate vs GINI",
+   desc:"Create a scatter plot of <code>log(Mortality_Rate)</code> against <code>log(GINI)</code> using blue points.",
+   h1:"A scatter plot helps visualise the relationship before running regression. Log transforms help linearise the relationship and handle skewed distributions.",
+   h2:"Use <code>plot(x, y, xlab=, ylab=, main=, pch=, col=)</code> with <code>log()</code> inside.",
+   h3:'plot(\n  log(data_clean$GINI), log(data_clean$Mortality_Rate),\n  xlab = "Log GINI",\n  ylab = "Log Mortality Rate",\n  main = "Mortality Rate vs GINI",\n  pch = 19, col = "blue"\n)',
+   code:"# Scatter plot\n"},
+  {num:6, title:"Fit a Simple Linear Regression",
+   desc:"Regress <code>Mortality_Rate</code> on <code>GINI</code>. Store the model as <code>model</code> and display the summary.",
+   h1:"A simple linear regression has one dependent variable (Y) and one independent variable (X). It estimates how much Y changes when X increases by 1 unit.",
+   h2:"Use <code>lm(Y ~ X, data = ...)</code> to fit. Use <code>summary(model)</code> to see coefficients, standard errors, t-statistics, p-values, and R-squared.",
+   h3:"model <- lm(Mortality_Rate ~ GINI, data = data_clean)\nsummary(model)",
+   code:"# Simple linear regression\n"},
+  {num:7, title:"Extract R-squared",
+   desc:"Extract the R-squared value from your simple regression model and print it clearly.",
+   h1:"R-squared tells you what proportion of variation in Mortality_Rate is explained by GINI. A value of 0.4 means 40% is explained.",
+   h2:"Use <code>summary(model)$r.squared</code> to extract it. Use <code>cat()</code> to print it.",
+   h3:'r_squared <- summary(model)$r.squared\ncat("R-squared:", round(r_squared, 4), "\\n")',
+   code:"# Extract R-squared\n"},
+  {num:8, title:"Prepare Data for Multiple Regression",
+   desc:"Add <code>GDP</code> to the dataset. Select <code>GINI</code>, <code>Mortality_Rate</code>, and <code>GDP</code>, then remove missing values.",
+   h1:"Multiple regression needs all three variables. Re-subset the data to include GDP, then remove NAs again.",
+   h2:"Use <code>subset(gini_data, select = c(GINI, Mortality_Rate, GDP))</code> then <code>na.omit()</code>.",
+   h3:"data_clean <- subset(gini_data, select = c(GINI, Mortality_Rate, GDP))\ndata_clean <- na.omit(data_clean)\nsummary(data_clean)",
+   code:"# Prepare data for multiple regression\n"},
+  {num:9, title:"Fit a Multiple Regression Model",
+   desc:"Fit a multiple regression of <code>log(Mortality_Rate)</code> on <code>log(GINI)</code> and <code>log(GDP)</code>. Store as <code>model2</code>.",
+   h1:"Multiple regression includes more than one predictor. Log-transforming all variables gives elasticity coefficients: a 1% increase in X leads to a beta% change in Y.",
+   h2:"Use <code>lm(log(Y) ~ log(X1) + log(X2), data = ...)</code>. The + adds predictors. Use <code>summary()</code> to see results.",
+   h3:"model2 <- lm(log(Mortality_Rate) ~ log(GINI) + log(GDP), data = data_clean)\nsummary(model2)",
+   code:"# Multiple regression\n"},
+  {num:10, title:"Scatter Plot: Mortality Rate vs GDP",
+   desc:"Plot <code>log(Mortality_Rate)</code> against <code>log(GDP)</code> using red points.",
+   h1:"This lets you compare the relationship between GDP and mortality against the GINI relationship. What pattern do you expect?",
+   h2:"Use <code>plot()</code> with <code>log()</code> transforms and <code>col = 'red'</code>.",
+   h3:'plot(\n  log(data_clean$GDP), log(data_clean$Mortality_Rate),\n  xlab = "Log GDP per capita",\n  ylab = "Log Mortality Rate",\n  main = "GDP vs Mortality Rate",\n  pch = 19, col = "red"\n)',
+   code:"# Scatter plot: mortality vs GDP\n"},
+  {num:11, title:"Diagnostic Plots",
+   desc:"Produce the 4 standard diagnostic plots for <code>model2</code> in a 2x2 grid.",
+   h1:"Diagnostic plots help check: linearity, homoscedasticity, normality of residuals, and influential observations.",
+   h2:"Use <code>par(mfrow = c(2, 2))</code> to set a 2x2 grid, then <code>plot(model2)</code>. Reset with <code>par(mfrow = c(1,1))</code>.",
+   h3:"par(mfrow = c(2, 2))\nplot(model2)\npar(mfrow = c(1, 1))",
+   code:"# Diagnostic plots\n"},
+  {num:12, title:"Normality Test (Shapiro-Wilk)",
+   desc:"Test whether the residuals of <code>model2</code> are normally distributed.",
+   h1:"The Shapiro-Wilk test has H0: residuals are normally distributed. A p-value below 0.05 means we reject normality.",
+   h2:"Use <code>shapiro.test(residuals(model2))</code>.",
+   h3:"shapiro.test(residuals(model2))",
+   code:"# Shapiro-Wilk normality test\n"},
+  {num:13, title:"Heteroscedasticity Test (Breusch-Pagan)",
+   desc:"Test whether the variance of residuals is constant using the Breusch-Pagan test.",
+   h1:"Heteroscedasticity means error variance is not constant. This violates OLS assumptions and makes standard errors unreliable. H0: homoscedasticity.",
+   h2:"Use <code>bptest(model2)</code> from the <code>lmtest</code> package. A p-value below 0.05 suggests heteroscedasticity.",
+   h3:"bptest(model2)",
+   code:"# Breusch-Pagan test\n"},
+  {num:14, title:"Residuals vs Fitted Values Plot",
+   desc:"Plot residuals against fitted values for <code>model2</code> and add a reference line at zero.",
+   h1:"This plot helps detect non-linearity and heteroscedasticity. Points should be randomly scattered around zero with no pattern.",
+   h2:"Use <code>plot(model2$fitted.values, residuals(model2))</code>. Add the reference line with <code>abline(h = 0)</code>.",
+   h3:'plot(\n  model2$fitted.values, residuals(model2),\n  xlab = "Fitted Values", ylab = "Residuals",\n  main = "Residuals vs Fitted Values",\n  pch = 19, col = "steelblue"\n)\nabline(h = 0, col = "red", lwd = 2)',
+   code:"# Residuals vs fitted values\n"},
+  {num:15, title:"Check for Multicollinearity (VIF)",
+   desc:"Compute Variance Inflation Factors for the predictors in <code>model2</code>.",
+   h1:"Multicollinearity occurs when predictors are highly correlated. VIF measures how much the variance of a coefficient is inflated. Values above 10 indicate serious problems.",
+   h2:"Use <code>vif(model2)</code> from the <code>car</code> package.",
+   h3:"vif(model2)",
+   code:"# Variance Inflation Factors\n"},
+  {num:16, title:"Cook's Distance",
+   desc:"Identify influential observations using Cook's distance plot.",
+   h1:"Cook's distance measures how much all fitted values would change if a particular observation were deleted. Values above 1 are generally concerning.",
+   h2:"Use <code>plot(model2, which = 4)</code> to produce the Cook's distance plot.",
+   h3:'plot(model2, which = 4,\n     main = "Influential Observations")',
+   code:"# Cook's distance\n"},
+  {num:17, title:"Compare Simple vs Multiple Regression",
+   desc:"Compare the R-squared from <code>model</code> and <code>model2</code>. What does the improvement tell you?",
+   h1:"Adding GDP should improve R-squared. The difference tells you how much additional variation in mortality is explained by GDP over and above GINI alone.",
+   h2:"Use <code>summary(model)$r.squared</code> and <code>summary(model2)$r.squared</code>. Print both with <code>cat()</code>.",
+   h3:'r1 <- summary(model)$r.squared\nr2 <- summary(model2)$r.squared\ncat("Simple regression R-squared:  ", round(r1, 4), "\\n")\ncat("Multiple regression R-squared:", round(r2, 4), "\\n")\ncat("Improvement:", round(r2 - r1, 4), "\\n")',
+   code:"# Compare R-squared\n"},
+  {num:18, title:"Interpret Your Results",
+   desc:"Extract and interpret the coefficients of <code>model2</code>. What do they tell us about inequality, GDP, and infant mortality?",
+   h1:"Think about: (1) sign and magnitude of each coefficient, (2) which predictor is more significant, (3) what R-squared tells us, (4) whether diagnostic tests raise concerns.",
+   h2:"Use <code>coef(model2)</code> to extract coefficients. Use <code>confint(model2)</code> for confidence intervals. Remember: log-log coefficients are elasticities.",
+   h3:"coef(model2)\nconfint(model2)\n# Remember: in a log-log model,\n# a 1% increase in GINI is associated with\n# coef(model2)[2]% change in Mortality_Rate",
+   code:"# Extract and interpret coefficients\n"}
+];
+</script>
 
 <script type="module">
 import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
@@ -400,750 +231,178 @@ import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
 const webR = new WebR();
 let webRReady = false;
 let completedSteps = new Set();
+const hintTimers = {};
+const editors = {};
 
-// ── EMBEDDED CSV DATA ──────────────────────────────────────
-const CSV_DATA = `Country Name,Country Code,Gini index in 2021,"Mortality rate, infant (per 1,000 live births) in 2021","GDP per capita, PPP (current international $) in 2021"
-Aruba,ABW,,,38226.14616
-Africa Eastern and Southern,AFE,,41.8238206,3967.400629
-Afghanistan,AFG,,46.1,2138.870247
-Africa Western and Central,AFW,,60.67933473,4756.308419
-Angola,AGO,,47,7414.278958
-Albania,ALB,,8.4,16261.80455
-Andorra,AND,,2.7,58829.85007
-Arab World,ARB,,24.58050273,15640.15704
-United Arab Emirates,ARE,,4.5,68912.54555
-Argentina,ARG,42.4,8.6,26086.80236
-Armenia,ARM,27.9,9.6,16899.07092
-American Samoa,ASM,,,
-Antigua and Barbuda,ATG,,8.3,25493.12955
-Australia,AUS,,3.2,57406.17876
-Austria,AUT,30.7,2.7,63421.20359
-Azerbaijan,AZE,,16.8,20111.3757
-Burundi,BDI,,37.5,864.2807327
-Belgium,BEL,26.6,3.1,62123.16132
-Benin,BEN,34.4,55,3575.311487
-Burkina Faso,BFA,37.4,51.2,2467.7406
-Bangladesh,BGD,,24.9,7366.489971
-Bulgaria,BGR,39,5.2,29404.96051
-Bahrain,BHR,,5.7,54351.83608
-"Bahamas, The",BHS,,11.3,28510.90949
-Bosnia and Herzegovina,BIH,,5.3,18396.46909
-Belarus,BLR,,2,27611.18011
-Belize,BLZ,,9.9,11559.8906
-Bermuda,BMU,,,93555.51745
-Bolivia,BOL,40.9,20.3,9342.971844
-Brazil,BRA,52.9,12.8,17672.9168
-Barbados,BRB,,10.4,14752.3737
-Brunei Darussalam,BRN,,8.6,79364.09456
-Bhutan,BTN,,20.7,13423.42887
-Botswana,BWA,,32.1,16663.86854
-Central African Republic,CAF,43,75.1,1057.194395
-Canada,CAN,,4.4,55781.69903
-Central Europe and the Baltics,CEB,,3.922489944,39902.21583
-Switzerland,CHE,,3.5,81603.20731
-Channel Islands,CHI,,,
-Chile,CHL,,5.7,29050.08079
-China,CHN,35.7,5.1,20406.72966
-Cote d'Ivoire,CIV,35.3,53.8,6520.73116
-Cameroon,CMR,42.2,48.3,4741.76177
-"Congo, Dem. Rep.",COD,,61.9,1358.204717
-"Congo, Rep.",COG,,32.1,6323.717579
-Colombia,COL,55.1,11,17587.23179
-Comoros,COM,,39.3,3426.757734
-Cabo Verde,CPV,,11,6753.69163
-Costa Rica,CRI,48.7,6.9,23700.29613
-Caribbean small states,CSS,,16.36931062,19757.12243
-Cuba,CUB,,5.9,
-Curacao,CUW,,,25163.99345
-Cayman Islands,CYM,,,76296.94068
-Cyprus,CYP,31.3,2.7,48466.84375
-Czechia,CZE,26.2,2.2,48418.11579
-Germany,DEU,,3.1,61939.65159
-Djibouti,DJI,,45.5,6032.277956
-Dominica,DMA,,30.3,14472.28586
-Denmark,DNK,28.3,3.1,69878.93481
-Dominican Republic,DOM,38.5,27.4,21923.30194
-Algeria,DZA,,19.2,14690.91623
-East Asia & Pacific (excluding high income),EAP,,12.64826922,17704.2856
-Early-demographic dividend,EAR,,26.63829434,10752.035
-East Asia & Pacific,EAS,,12,21207.86167
-Europe & Central Asia (excluding high income),ECA,,11.87393674,21950.8681
-Europe & Central Asia,ECS,,6.6,42464.96464
-Ecuador,ECU,45.8,10.8,13452.00877
-"Egypt, Arab Rep.",EGY,,16,15820.67138
-Euro area,EMU,,2.981013284,54208.13008
-Eritrea,ERI,,28.9,
-Spain,ESP,33.9,2.6,43620.60406
-Estonia,EST,31.8,1.5,44651.99922
-Ethiopia,ETH,,35,2628.343464
-European Union,EUU,,3.163323956,51916.83145
-Fragile and conflict affected situations,FCS,,51.27864414,5228.80563
-Finland,FIN,27.7,1.9,57788.90346
-Fiji,FJI,,23.3,10593.91273
-France,FRA,31.5,3.3,53834.7993
-Faroe Islands,FRO,,,68124.1857
-"Micronesia, Fed. Sts.",FSM,,21.1,3870.932404
-Gabon,GAB,,29.5,19552.36253
-United Kingdom,GBR,32.4,3.6,52841.63459
-Georgia,GEO,34.2,8.4,18915.6534
-Ghana,GHA,,32.5,6544.2382
-Gibraltar,GIB,,,
-Guinea,GIN,,63.7,3735.089827
-"Gambia, The",GMB,,33.7,2710.552463
-Guinea-Bissau,GNB,33.4,50.1,2278.023395
-Equatorial Guinea,GNQ,,56.7,18100.91393
-Greece,GRC,32.9,3.4,33018.25442
-Grenada,GRD,,14.4,14325.55485
-Greenland,GRL,,,68086.46012
-Guatemala,GTM,,19.4,12106.42254
-Guam,GUM,,,
-Guyana,GUY,,23,23176.1332
-High income,HIC,,4.2,55103.06245
-"Hong Kong SAR, China",HKG,,,65884.93763
-Honduras,HND,,14.2,6209.94035
-Heavily indebted poor countries (HIPC),HPC,,45.58958464,2993.8552
-Croatia,HRV,28.9,3.9,37232.59577
-Haiti,HTI,,45.1,3114.963542
-Hungary,HUN,29.2,3.3,38647.99808
-IBRD only,IBD,,18.09136334,16356.59606
-IDA & IBRD total,IBT,,30.92127071,13155.86594
-IDA total,IDA,,46.56949368,4469.195999
-IDA blend,IDB,,55.53498759,5632.059958
-Indonesia,IDN,35.5,18.7,12897.10314
-IDA only,IDX,,42.0126173,3909.948874
-Isle of Man,IMN,,,
-India,IND,32.8,26.8,8087.993803
-Not classified,INX,,,
-Ireland,IRL,30.1,2.8,114120.5445
-"Iran, Islamic Rep.",IRN,35.5,10.7,15042.37411
-Iraq,IRQ,,20.6,12596.52649
-Iceland,ISL,,2.1,61966.41677
-Israel,ISR,37.9,2.8,46126.64231
-Italy,ITA,34.8,2.3,49901.61214
-Jamaica,JAM,40.2,16.2,9610.989337
-Jordan,JOR,,12.6,9115.019511
-Japan,JPN,,1.8,44549.33834
-Kazakhstan,KAZ,29.2,8.9,33893.89546
-Kenya,KEN,38.7,31,5360.361903
-Kyrgyz Republic,KGZ,28.8,15.6,5802.388972
-Cambodia,KHM,,21.1,4668.23778
-Kiribati,KIR,,44.8,3036.415136
-St. Kitts and Nevis,KNA,,13.7,26420.33638
-"Korea, Rep.",KOR,32.9,2.5,48571.43221
-Kuwait,KWT,,7.5,49668.99747
-Latin America & Caribbean (excluding high income),LAC,,13.71886046,17792.02817
-Lao PDR,LAO,,33.7,8111.056067
-Lebanon,LBN,,14.1,11860.05863
-Liberia,LBR,,56.4,1558.742249
-Libya,LBY,,9.2,18171.52297
-St. Lucia,LCA,,16.1,18651.8732
-Latin America & Caribbean,LCN,,13.9,18561.53322
-Least developed countries: UN classification,LDC,,43.33501076,3645.870218
-Low income,LIC,,46.8,2127.342727
-Liechtenstein,LIE,,,
-Sri Lanka,LKA,,5.7,14316.13649
-Lower middle income,LMC,,34.8,7684.54349
-Low & middle income,LMY,,31.39205982,12120.20907
-Lesotho,LSO,,57.7,2516.977753
-Late-demographic dividend,LTE,,7.848062772,21905.72134
-Lithuania,LTU,36.7,2.9,46410.06764
-Luxembourg,LUX,32.7,2.2,137947.3439
-Latvia,LVA,34.3,3,36777.89285
-"Macao SAR, China",MAC,,,73734.08161
-St. Martin (French part),MAF,,,
-Morocco,MAR,,15.4,8581.330078
-Monaco,MCO,,2.4,
-Moldova,MDA,25.7,12.3,15682.07033
-Madagascar,MDG,,45.4,1642.304162
-Maldives,MDV,,5.1,18865.7193
-Middle East & North Africa,MEA,,16.8,17915.00558
-Mexico,MEX,,11.4,21131.91576
-Marshall Islands,MHL,,24.7,6577.489177
-Middle income,MIC,,27.56669009,13311.39348
-North Macedonia,MKD,,4.6,22371.49679
-Mali,MLI,35.7,61.4,2399.461535
-Malta,MLT,,5,53492.20485
-Myanmar,MMR,,33.5,5138.88725
-Middle East & North Africa (excluding high income),MNA,,18.16742712,12344.46363
-Montenegro,MNE,34.3,2.4,24509.93648
-Mongolia,MNG,,12.1,14951.13657
-Northern Mariana Islands,MNP,,,
-Mozambique,MOZ,,50,1440.459681
-Mauritania,MRT,,32.2,5988.203551
-Mauritius,MUS,,13.9,22737.57294
-Malawi,MWI,,30.9,1728.825398
-Malaysia,MYS,40.7,6.8,30456.0929
-North America,NAC,,5.3,69482.6517
-Namibia,NAM,,29.3,10785.08343
-New Caledonia,NCL,,,
-Niger,NER,32.9,61,1538.470747
-Nigeria,NGA,,70.5,5623.664078
-Nicaragua,NIC,,13.5,6873.731177
-Netherlands,NLD,25.7,3.4,67693.32643
-Norway,NOR,,1.8,89209.13978
-Nepal,NPL,,23.9,4461.468785
-Nauru,NRU,,22.9,11340.04016
-New Zealand,NZL,,3.9,48194.04106
-OECD members,OED,,5.653946822,50844.75644
-Oman,OMN,,9.1,38930.99384
-Other small states,OSS,,24.60089243,26843.73423
-Pakistan,PAK,,52.5,5554.585701
-Panama,PAN,50.9,12.2,30895.83225
-Peru,PER,40.1,12,15028.6277
-Philippines,PHL,40.7,22.1,8797.168712
-Palau,PLW,,22.5,15781.97905
-Papua New Guinea,PNG,,34.5,3992.941221
-Poland,POL,28.5,3.8,40462.68871
-Pre-demographic dividend,PRE,,51.97554322,4029.920413
-Puerto Rico,PRI,,,40559.69857
-"Korea, Dem. People's Rep.",PRK,,12.7,
-Portugal,PRT,34.6,2.7,38783.01156
-Paraguay,PRY,42.9,15.5,15361.08475
-West Bank and Gaza,PSE,,12.7,5663.121607
-Pacific island small states,PSS,,19.63595879,6267.263842
-Post-demographic dividend,PST,,3.997560325,56189.7863
-French Polynesia,PYF,,,
-Qatar,QAT,,4.7,108865.1378
-Romania,ROU,33.9,5.3,37969.15389
-Russian Federation,RUS,35.1,4.1,38938.49609
-Rwanda,RWA,,29.5,2709.45783
-South Asia,SAS,,31.9,7610.501896
-Saudi Arabia,SAU,,5.7,47754.43145
-Sudan,SDN,,38.1,3420.451904
-Senegal,SEN,36.2,29,4258.786284
-Singapore,SGP,,1.9,131864.0923
-Solomon Islands,SLB,,16.2,2714.193196
-Sierra Leone,SLE,,78.1,1623.975624
-El Salvador,SLV,39,10.6,10709.75958
-San Marino,SMR,,1.4,65717.89155
-Somalia,SOM,,69.8,1461.968792
-Serbia,SRB,33.1,4.6,22574.23047
-Sub-Saharan Africa (excluding high income),SSA,,49.81237246,4284.57735
-South Sudan,SSD,,63.8,
-Sub-Saharan Africa,SSF,,49.8,4286.735165
-Small states,SST,,22.44005206,22995.38089
-Sao Tome and Principe,STP,,11.9,5703.248243
-Suriname,SUR,,15.4,18447.33994
-Slovak Republic,SVK,24.1,4.9,37790.78744
-Slovenia,SVN,24.3,1.9,46502.09789
-Sweden,SWE,29.8,2.1,63375.04465
-Eswatini,SWZ,,40.8,10202.50961
-Sint Maarten (Dutch part),SXM,,,41365.80751
-Seychelles,SYC,,12.7,29979.82727
-Syrian Arab Republic,SYR,,18.1,2914.530559
-Turks and Caicos Islands,TCA,,4.2,21253.08063
-Chad,TCD,,65.7,1764.348076
-East Asia & Pacific (IDA & IBRD countries),TEA,,12.64775136,17900.93976
-Europe & Central Asia (IDA & IBRD countries),TEC,,9.209553439,29885.66251
-Togo,TGO,37.9,43.2,2646.828039
-Thailand,THA,34.9,7.2,20280.93371
-Tajikistan,TJK,,27.6,4074.560223
-Turkmenistan,TKM,,35.8,
-Latin America & the Caribbean (IDA & IBRD countries),TLA,,13.93569317,18476.43219
-Timor-Leste,TLS,,42.9,6970.000221
-Middle East & North Africa (IDA & IBRD countries),TMN,,18.26001438,12425.62891
-Tonga,TON,27.1,9.6,6742.461774
-South Asia (IDA & IBRD),TSA,,31.88757803,7610.501896
-Sub-Saharan Africa (IDA & IBRD countries),TSS,,49.81088345,4286.735165
-Trinidad and Tobago,TTO,,14.2,27631.67781
-Tunisia,TUN,33.7,10.6,12159.05453
-Turkiye,TUR,44.4,8.6,31637.53054
-Tuvalu,TUV,,17.9,5053.750446
-Tanzania,TZA,,31.1,3451.448242
-Uganda,UGA,,31.1,2688.266835
-Ukraine,UKR,,7,18040.3457
-Upper middle income,UMC,,11.1,19296.58969
-Uruguay,URY,40.8,5.8,29187.42868
-United States,USA,39.7,5.4,71055.87619
-Uzbekistan,UZB,,12.5,8162.195817
-St. Vincent and the Grenadines,VCT,,10.6,15673.73704
-"Venezuela, RB",VEN,,21.2,
-British Virgin Islands,VGB,,12,
-Virgin Islands (U.S.),VIR,,,46238.05965
-Viet Nam,VNM,,16.5,12230.25962
-Vanuatu,VUT,,16,3006.58031
-World,WLD,,28.6,19719.51469
-Samoa,WSM,,14.3,6074.689855
-Kosovo,XKX,,9.1,12362.70481
-"Yemen, Rep.",YEM,,34.7,
-South Africa,ZAF,,27.8,14172.54425
-Zambia,ZMB,,39.9,3526.507418
-Zimbabwe,ZWE,,35.5,3276.267753
-`;
-
-// ── STEP DEFINITIONS ──────────────────────────────────────
-const STEPS = [
-  {
-    num: 1,
-    title: "Load Libraries",
-    desc: "Load all the R packages needed for this seminar: <code>dplyr</code>, <code>ggplot2</code>, <code>lmtest</code>, and <code>car</code>.",
-    hint1: "Think about what functions you need: data manipulation, plotting, regression testing, and VIF calculation. Each comes from a different package.",
-    hint2: "Functions to use: <code>library()</code> — call it once for each package you need.",
-    hint3: `<pre>library(dplyr)
-library(ggplot2)
-library(lmtest)
-library(car)</pre>`,
-    default_code: "# Load required packages
-"
-  },
-  {
-    num: 2,
-    title: "Inspect the Dataset",
-    desc: "The dataset <code>gini_data</code> is already loaded. Explore its structure: show the first few rows, the structure, and the column names.",
-    hint1: "Think about three things: what do the first rows look like? what data types are the columns? what are the column names?",
-    hint2: "Functions to use: <code>head()</code>, <code>str()</code>, <code>colnames()</code>",
-    hint3: `<pre>head(gini_data)
-str(gini_data)
-colnames(gini_data)</pre>`,
-    default_code: "# Explore the dataset
-"
-  },
-  {
-    num: 3,
-    title: "Rename Variables",
-    desc: "The column names are very long. Rename them to shorter names: <code>GDP</code>, <code>GINI</code>, and <code>Mortality_Rate</code>.",
-    hint1: "You want to replace the long column names with shorter ones. The original names include 'GDP per capita...', 'Gini index...', and 'Mortality rate...'",
-    hint2: "Functions to use: <code>dplyr::rename()</code> — syntax is <code>rename(data, new_name = old_name)</code>. Then use <code>colnames()</code> to verify.",
-    hint3: `<pre>gini_data <- dplyr::rename(
-  gini_data,
-  GDP            = "GDP per capita, PPP (current international $) in 2021",
-  GINI           = "Gini index in 2021",
-  Mortality_Rate = "Mortality rate, infant (per 1,000 live births) in 2021"
-)
-colnames(gini_data)
-summary(gini_data)</pre>`,
-    default_code: "# Rename columns
-"
-  },
-  {
-    num: 4,
-    title: "Clean Data for Simple Regression",
-    desc: "Select only <code>GINI</code> and <code>Mortality_Rate</code> for the simple regression. Remove rows with missing values.",
-    hint1: "You need to: (1) keep only two columns, (2) drop any rows where either column is NA. Missing values will cause regression errors.",
-    hint2: "Functions to use: <code>subset()</code> with <code>select = c(...)</code>, then <code>na.omit()</code>. Check with <code>summary()</code>.",
-    hint3: `<pre>data_clean <- subset(gini_data, select = c(GINI, Mortality_Rate))
-data_clean <- na.omit(data_clean)
-summary(data_clean)</pre>`,
-    default_code: "# Select variables and remove missing values
-"
-  },
-  {
-    num: 5,
-    title: "Scatter Plot: Mortality Rate vs GINI",
-    desc: "Create a scatter plot of log(Mortality_Rate) against log(GINI). Use blue points and add appropriate axis labels.",
-    hint1: "A scatter plot helps visualise the relationship before running regression. Using log transforms helps linearise the relationship and handle skewed distributions.",
-    hint2: "Functions to use: <code>plot(x, y, xlab=, ylab=, main=, pch=, col=)</code>. Use <code>log()</code> inside the plot call.",
-    hint3: `<pre>plot(
-  log(data_clean$GINI), log(data_clean$Mortality_Rate),
-  xlab = "Log GINI Coefficient",
-  ylab = "Log Mortality Rate (per 1,000 live births)",
-  main = "Mortality Rate vs GINI Coefficient",
-  pch  = 19,
-  col  = "blue"
-)</pre>`,
-    default_code: "# Scatter plot
-"
-  },
-  {
-    num: 6,
-    title: "Fit a Simple Linear Regression",
-    desc: "Regress <code>Mortality_Rate</code> on <code>GINI</code>. Store the model as <code>model</code> and display the summary.",
-    hint1: "A simple linear regression has one dependent variable (Y) and one independent variable (X). The model estimates how much Y changes when X increases by 1 unit.",
-    hint2: "Functions to use: <code>lm(Y ~ X, data = ...)</code> to fit the model. <code>summary(model)</code> to see coefficients, standard errors, t-statistics, p-values, and R-squared.",
-    hint3: `<pre>model <- lm(Mortality_Rate ~ GINI, data = data_clean)
-summary(model)</pre>`,
-    default_code: "# Simple linear regression
-"
-  },
-  {
-    num: 7,
-    title: "Extract R-squared",
-    desc: "Extract the R-squared value from your simple regression model and print it clearly.",
-    hint1: "R-squared tells you what proportion of the variation in Mortality_Rate is explained by GINI. A value of 0.4 means 40% of variation is explained.",
-    hint2: "Functions to use: <code>summary(model)$r.squared</code> extracts it. Use <code>cat()</code> or <code>print()</code> to display it.",
-    hint3: `<pre>r_squared <- summary(model)$r.squared
-cat("R-squared (simple regression):", round(r_squared, 4), "\n")</pre>`,
-    default_code: "# Extract R-squared
-"
-  },
-  {
-    num: 8,
-    title: "Prepare Data for Multiple Regression",
-    desc: "Now add <code>GDP</code> to the dataset. Select <code>GINI</code>, <code>Mortality_Rate</code>, and <code>GDP</code>, then remove missing values.",
-    hint1: "Multiple regression needs all three variables. You need to re-subset the data to include GDP, then remove NAs again (some countries may have GDP but not GINI, etc.)",
-    hint2: "Functions to use: <code>subset(gini_data, select = c(GINI, Mortality_Rate, GDP))</code> then <code>na.omit()</code>.",
-    hint3: `<pre>data_clean <- subset(gini_data, select = c(GINI, Mortality_Rate, GDP))
-data_clean <- na.omit(data_clean)
-summary(data_clean)</pre>`,
-    default_code: "# Prepare data for multiple regression
-"
-  },
-  {
-    num: 9,
-    title: "Fit a Multiple Regression Model",
-    desc: "Fit a multiple regression of <code>log(Mortality_Rate)</code> on <code>log(GINI)</code> and <code>log(GDP)</code>. Store as <code>model2</code>.",
-    hint1: "Multiple regression includes more than one predictor. Log transforming all variables gives you elasticity coefficients: a 1% increase in X leads to a β% change in Y.",
-    hint2: "Functions to use: <code>lm(log(Y) ~ log(X1) + log(X2), data = ...)</code>. The <code>+</code> adds predictors. Use <code>summary()</code> to see results.",
-    hint3: `<pre>model2 <- lm(log(Mortality_Rate) ~ log(GINI) + log(GDP), data = data_clean)
-summary(model2)</pre>`,
-    default_code: "# Multiple regression
-"
-  },
-  {
-    num: 10,
-    title: "Scatter Plot: Mortality Rate vs GDP",
-    desc: "Plot log(Mortality_Rate) against log(GDP) using red points. Compare the relationship with the GINI scatter plot.",
-    hint1: "This plot lets you visually compare the relationship between GDP and mortality against the GINI and mortality relationship. What pattern do you expect?",
-    hint2: "Functions to use: <code>plot()</code> with <code>log()</code> transforms. Use <code>col = 'red'</code>.",
-    hint3: `<pre>plot(
-  log(data_clean$GDP), log(data_clean$Mortality_Rate),
-  xlab = "Log GDP per capita (PPP, 2021)",
-  ylab = "Log Mortality Rate (per 1,000 live births)",
-  main = "GDP vs Mortality Rate",
-  pch  = 19,
-  col  = "red"
-)</pre>`,
-    default_code: "# Scatter plot: mortality vs GDP
-"
-  },
-  {
-    num: 11,
-    title: "Diagnostic Plots",
-    desc: "Produce the 4 standard diagnostic plots for <code>model2</code>: Residuals vs Fitted, QQ-plot, Scale-Location, and Residuals vs Leverage.",
-    hint1: "Diagnostic plots help check regression assumptions: linearity, homoscedasticity (constant variance), normality of residuals, and influential observations.",
-    hint2: "Functions to use: <code>par(mfrow = c(2, 2))</code> to set a 2x2 grid, then <code>plot(model2)</code> which automatically produces all 4 plots. Reset with <code>par(mfrow = c(1,1))</code>.",
-    hint3: `<pre>par(mfrow = c(2, 2))
-plot(model2)
-par(mfrow = c(1, 1))</pre>`,
-    default_code: "# Diagnostic plots
-"
-  },
-  {
-    num: 12,
-    title: "Normality Test of Residuals (Shapiro-Wilk)",
-    desc: "Formally test whether the residuals of <code>model2</code> are normally distributed using the Shapiro-Wilk test.",
-    hint1: "The Shapiro-Wilk test has H0: residuals are normally distributed. A p-value below 0.05 means we reject normality. OLS assumes normally distributed errors.",
-    hint2: "Functions to use: <code>shapiro.test()</code>. Extract residuals with <code>residuals(model2)</code>.",
-    hint3: `<pre>shapiro.test(residuals(model2))</pre>`,
-    default_code: "# Shapiro-Wilk normality test
-"
-  },
-  {
-    num: 13,
-    title: "Test for Heteroscedasticity (Breusch-Pagan)",
-    desc: "Test whether the variance of residuals is constant using the Breusch-Pagan test from the <code>lmtest</code> package.",
-    hint1: "Heteroscedasticity means the error variance is not constant across observations. This violates OLS assumptions and makes standard errors unreliable. H0: homoscedasticity.",
-    hint2: "Functions to use: <code>bptest(model2)</code> from the <code>lmtest</code> package. A p-value below 0.05 suggests heteroscedasticity.",
-    hint3: `<pre>bptest(model2)</pre>`,
-    default_code: "# Breusch-Pagan test
-"
-  },
-  {
-    num: 14,
-    title: "Residuals vs Fitted Values Plot",
-    desc: "Create a custom scatter plot of residuals against fitted values for <code>model2</code>. Add a horizontal reference line at zero.",
-    hint1: "This plot helps detect non-linearity and heteroscedasticity. Points should be randomly scattered around zero with no pattern. Funnel shapes indicate heteroscedasticity.",
-    hint2: "Functions to use: <code>plot(model2$fitted.values, residuals(model2), ...)</code>. Add the reference line with <code>abline(h = 0)</code>.",
-    hint3: `<pre>plot(
-  model2$fitted.values, residuals(model2),
-  xlab = "Fitted Values",
-  ylab = "Residuals",
-  main = "Residuals vs Fitted Values",
-  pch  = 19, col = "steelblue"
-)
-abline(h = 0, col = "red", lwd = 2)</pre>`,
-    default_code: "# Residuals vs fitted values
-"
-  },
-  {
-    num: 15,
-    title: "Check for Multicollinearity (VIF)",
-    desc: "Compute Variance Inflation Factors (VIF) for the predictors in <code>model2</code> to check for multicollinearity.",
-    hint1: "Multicollinearity occurs when predictors are highly correlated with each other, making it hard to isolate their individual effects. VIF measures how much the variance of a coefficient is inflated.",
-    hint2: "Functions to use: <code>vif(model2)</code> from the <code>car</code> package. Values above 10 indicate serious multicollinearity; above 5 is concerning.",
-    hint3: `<pre>vif(model2)</pre>`,
-    default_code: "# Variance Inflation Factors
-"
-  },
-  {
-    num: 16,
-    title: "Identify Influential Observations (Cook's Distance)",
-    desc: "Use Cook's distance to identify observations that have a large influence on the regression estimates.",
-    hint1: "Cook's distance measures how much all fitted values would change if a particular observation were deleted. Observations with Cook's D > 1 are generally considered influential.",
-    hint2: "Functions to use: <code>plot(model2, which = 4)</code> to produce the Cook's distance plot. The <code>which = 4</code> argument selects this specific diagnostic plot.",
-    hint3: `<pre>plot(model2, which = 4,
-     main = "Cook\'s Distance — Influential Observations")</pre>`,
-    default_code: "# Cook's distance
-"
-  },
-  {
-    num: 17,
-    title: "Compare Simple vs Multiple Regression",
-    desc: "Compare the R-squared from the simple regression (<code>model</code>) and the multiple regression (<code>model2</code>). What does the improvement tell you?",
-    hint1: "Adding GDP as a second predictor should improve R-squared. The difference tells you how much additional variation in mortality is explained by GDP, over and above GINI alone.",
-    hint2: "Functions to use: <code>summary(model)$r.squared</code> and <code>summary(model2)$r.squared</code>. Use <code>cat()</code> to print both clearly.",
-    hint3: `<pre>r1 <- summary(model)$r.squared
-r2 <- summary(model2)$r.squared
-cat("Simple regression R-squared: ", round(r1, 4), "\n")
-cat("Multiple regression R-squared:", round(r2, 4), "\n")
-cat("Improvement:", round(r2 - r1, 4), "\n")</pre>`,
-    default_code: "# Compare R-squared
-"
-  },
-  {
-    num: 18,
-    title: "Interpret Your Results",
-    desc: "Write a short interpretation of your findings. What do the coefficients of <code>model2</code> tell us about the relationship between inequality, GDP, and infant mortality?",
-    hint1: "Think about: (1) the sign and magnitude of each coefficient, (2) which predictor is more significant, (3) what the R-squared tells us, (4) whether the diagnostic tests raise concerns.",
-    hint2: "Use <code>coef(model2)</code> to extract coefficients. Use <code>confint(model2)</code> for confidence intervals. Remember: these are log-log coefficients, so they are elasticities.",
-    hint3: `<pre># Extract key results
-coef(model2)
-confint(model2)
-
-# Remember: in a log-log model,
-# a 1% increase in GINI is associated with
-# a coef(model2)[2]% change in Mortality_Rate
-# (holding GDP constant)</pre>`,
-    default_code: "# Extract and interpret coefficients
-"
-  }
-];
-
-// ── BUILD STEPS HTML ──────────────────────────────────────
 function buildSteps() {
   const container = document.getElementById('steps-container');
-  
   STEPS.forEach(step => {
     const card = document.createElement('div');
     card.className = 'step-card';
-    card.id = `step-${step.num}`;
-    
-    card.innerHTML = `
-      <div class="step-header">
-        <div class="step-num">${step.num}</div>
-        <div class="step-title">${step.title}</div>
-      </div>
-      <div class="step-body">
-        <div class="step-desc">${step.desc}</div>
-        
-        <div class="hint-system">
-          <div class="hint-bar">
-            <button class="hint-btn" id="hint1-btn-${step.num}" onclick="showHint(${step.num}, 1)">
-              💡 Hint
-            </button>
-            <button class="hint-btn" id="hint2-btn-${step.num}" onclick="showHint(${step.num}, 2)" disabled>
-              🔧 Functions <span class="timer-badge" id="timer2-${step.num}">30s</span>
-            </button>
-            <button class="hint-btn" id="hint3-btn-${step.num}" onclick="showHint(${step.num}, 3)" disabled>
-              📋 Solution <span class="timer-badge" id="timer3-${step.num}">60s</span>
-            </button>
-          </div>
-          <div class="hint-content hint-1" id="hint1-${step.num}">${step.hint1}</div>
-          <div class="hint-content hint-2" id="hint2-${step.num}">${step.hint2}</div>
-          <div class="hint-content hint-3" id="hint3-${step.num}">${step.hint3}</div>
-        </div>
-
-        <div class="editor-wrap">
-          <div class="editor-toolbar">
-            <span class="editor-label">R</span>
-            <button class="btn-run" id="run-btn-${step.num}" onclick="runCode(${step.num})" disabled>
-              ▶ Run
-            </button>
-          </div>
-          <textarea id="editor-${step.num}">${step.default_code}</textarea>
-        </div>
-        
-        <div class="output-area" id="output-${step.num}"></div>
-        <div class="output-plot" id="plot-${step.num}"></div>
-      </div>
-    `;
-    
+    card.id = 'step-' + step.num;
+    card.innerHTML =
+      '<div class="step-header">' +
+        '<div class="step-num">' + step.num + '</div>' +
+        '<div class="step-title">' + step.title + '</div>' +
+      '</div>' +
+      '<div class="step-body">' +
+        '<div class="step-desc">' + step.desc + '</div>' +
+        '<div class="hint-system">' +
+          '<div class="hint-bar">' +
+            '<button class="hint-btn" id="hb1-' + step.num + '">&#128161; Hint</button>' +
+            '<button class="hint-btn" id="hb2-' + step.num + '" disabled>&#128295; Functions <span class="timer-badge" id="t2-' + step.num + '">30s</span></button>' +
+            '<button class="hint-btn" id="hb3-' + step.num + '" disabled>&#128203; Solution <span class="timer-badge" id="t3-' + step.num + '">60s</span></button>' +
+          '</div>' +
+          '<div class="hint-content hint-1" id="hc1-' + step.num + '">' + step.h1 + '</div>' +
+          '<div class="hint-content hint-2" id="hc2-' + step.num + '">' + step.h2 + '</div>' +
+          '<div class="hint-content hint-3" id="hc3-' + step.num + '"><pre>' + step.h3 + '</pre></div>' +
+        '</div>' +
+        '<div class="editor-wrap">' +
+          '<div class="editor-toolbar">' +
+            '<span class="editor-label">R</span>' +
+            '<button class="btn-run" id="rb-' + step.num + '" disabled>&#9654; Run</button>' +
+          '</div>' +
+          '<textarea id="ta-' + step.num + '">' + step.code + '</textarea>' +
+        '</div>' +
+        '<div class="output-area" id="out-' + step.num + '"></div>' +
+        '<div class="output-plot" id="plt-' + step.num + '"></div>' +
+      '</div>';
     container.appendChild(card);
-    
-    // Init CodeMirror
-    const cm = CodeMirror.fromTextArea(document.getElementById(`editor-${step.num}`), {
-      mode: 'r',
-      theme: 'eclipse',
-      lineNumbers: true,
-      lineWrapping: true,
-      extraKeys: { "Ctrl-Enter": () => runCode(step.num), "Cmd-Enter": () => runCode(step.num) }
+
+    const cm = CodeMirror.fromTextArea(document.getElementById('ta-' + step.num), {
+      mode: 'r', theme: 'eclipse', lineNumbers: true, lineWrapping: true,
+      extraKeys: {
+        'Ctrl-Enter': () => runCode(step.num),
+        'Cmd-Enter': () => runCode(step.num)
+      }
     });
     cm.setSize(null, 'auto');
-    window[`cm_${step.num}`] = cm;
+    editors[step.num] = cm;
+
+    document.getElementById('hb1-' + step.num).addEventListener('click', () => showHint(step.num, 1));
+    document.getElementById('hb2-' + step.num).addEventListener('click', () => showHint(step.num, 2));
+    document.getElementById('hb3-' + step.num).addEventListener('click', () => showHint(step.num, 3));
+    document.getElementById('rb-' + step.num).addEventListener('click', () => runCode(step.num));
   });
 }
 
-// ── HINT SYSTEM ───────────────────────────────────────────
-const hintTimers = {};
-
-function showHint(stepNum, hintLevel) {
-  // Hide all hints for this step
+function showHint(n, level) {
   [1,2,3].forEach(i => {
-    document.getElementById(`hint${i}-${stepNum}`).classList.remove('show');
-    document.getElementById(`hint${i}-btn-${stepNum}`).classList.remove('active');
+    document.getElementById('hc' + i + '-' + n).classList.remove('show');
+    document.getElementById('hb' + i + '-' + n).classList.remove('active');
   });
-  
-  // Show selected hint
-  document.getElementById(`hint${hintLevel}-${stepNum}`).classList.add('show');
-  document.getElementById(`hint${hintLevel}-btn-${stepNum}`).classList.add('active');
-  
-  // Start timers for next hints
-  if(hintLevel === 1 && !hintTimers[`${stepNum}_2`]) {
-    startHintTimer(stepNum, 2, 30);
-  }
-  if(hintLevel === 2 && !hintTimers[`${stepNum}_3`]) {
-    startHintTimer(stepNum, 3, 30);
-  }
+  document.getElementById('hc' + level + '-' + n).classList.add('show');
+  document.getElementById('hb' + level + '-' + n).classList.add('active');
+  if (level === 1 && !hintTimers[n + '_2']) startTimer(n, 2, 30);
+  if (level === 2 && !hintTimers[n + '_3']) startTimer(n, 3, 30);
 }
 
-function startHintTimer(stepNum, hintLevel, seconds) {
-  const key = `${stepNum}_${hintLevel}`;
-  const timerEl = document.getElementById(`timer${hintLevel}-${stepNum}`);
-  const btnEl = document.getElementById(`hint${hintLevel}-btn-${stepNum}`);
-  
-  let remaining = seconds;
+function startTimer(n, level, secs) {
+  const key = n + '_' + level;
+  const timerEl = document.getElementById('t' + level + '-' + n);
+  const btn = document.getElementById('hb' + level + '-' + n);
+  let rem = secs;
   hintTimers[key] = setInterval(() => {
-    remaining--;
-    if(timerEl) timerEl.textContent = `${remaining}s`;
-    if(remaining <= 0) {
+    rem--;
+    if (timerEl) timerEl.textContent = rem + 's';
+    if (rem <= 0) {
       clearInterval(hintTimers[key]);
-      btnEl.disabled = false;
-      btnEl.classList.add('unlocked');
-      if(timerEl) timerEl.textContent = '✓';
+      btn.disabled = false;
+      btn.classList.add('unlocked');
+      if (timerEl) timerEl.textContent = '&#10003;';
     }
   }, 1000);
 }
 
-// ── WEBR SETUP ────────────────────────────────────────────
+async function runCode(n) {
+  if (!webRReady) { alert('R is still loading, please wait...'); return; }
+  const code = editors[n].getValue();
+  const outEl = document.getElementById('out-' + n);
+  const pltEl = document.getElementById('plt-' + n);
+  const btn = document.getElementById('rb-' + n);
+  btn.disabled = true;
+  btn.textContent = 'Running...';
+  outEl.className = 'output-area show';
+  outEl.textContent = 'Running...';
+  pltEl.className = 'output-plot';
+  pltEl.innerHTML = '';
+  try {
+    const shelter = await new webR.Shelter();
+    const result = await shelter.captureR(code, { withAutoprint: true });
+    const txt = result.output.filter(o => o.type === 'stdout' || o.type === 'stderr').map(o => o.data).join('\n');
+    if (txt.trim()) {
+      outEl.textContent = txt;
+      outEl.className = 'output-area show success-out';
+    } else {
+      outEl.textContent = '(No text output)';
+      outEl.className = 'output-area show';
+    }
+    try {
+      const imgs = await webR.flush();
+      if (imgs && imgs.length > 0) {
+        pltEl.className = 'output-plot show';
+        imgs.forEach(img => {
+          const el = document.createElement('img');
+          el.src = img.data;
+          pltEl.appendChild(el);
+        });
+      }
+    } catch(e) {}
+    await shelter.purge();
+    completedSteps.add(n);
+    const pct = (completedSteps.size / STEPS.length) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('progress-text').textContent = completedSteps.size + ' / ' + STEPS.length + ' steps completed';
+  } catch(err) {
+    outEl.textContent = 'Error: ' + err.message;
+    outEl.className = 'output-area show error-out';
+  }
+  btn.disabled = false;
+  btn.textContent = '\u25b6 Run';
+}
+
 async function initWebR() {
   const statusEl = document.getElementById('webr-status');
   const statusText = document.getElementById('webr-status-text');
-  
   try {
+    statusText.textContent = 'Starting R (1/4)...';
     await webR.init();
-    
-    statusText.textContent = 'Loading packages...';
-    
-    // Install packages
-    await webR.installPackages(['lmtest', 'car']);
-    
-    // Load base packages
+
+    statusText.textContent = 'Installing lmtest (2/4)...';
+    try { await webR.installPackages(['lmtest'], { quiet: true }); } catch(e) {}
+
+    statusText.textContent = 'Installing car (3/4)...';
+    try { await webR.installPackages(['car'], { quiet: true }); } catch(e) {}
+
+    statusText.textContent = 'Loading dataset (4/4)...';
+    await webR.evalR('tryCatch({library(lmtest);library(car)}, error=function(e){})');
+
+    // Decode base64 CSV and load
+    const csvDecoded = atob(CSV_B64);
     await webR.evalR(`
-      library(lmtest)
-      library(car)
+      con <- textConnection(${JSON.stringify(csvDecoded)})
+      gini_data <- read.csv(con, stringsAsFactors = FALSE)
+      close(con)
+      names(gini_data) <- c("Country_Name","Country_Code","GINI","Mortality_Rate","GDP")
+      cat("Ready:", nrow(gini_data), "countries loaded\\n")
     `);
-    
-    // Load the embedded CSV data
-    const csvEscaped = CSV_DATA.replace(/\\/g, '\\').replace(/"/g, '\\"');
-    await webR.evalR(`
-      gini_data <- read.csv(text = "${csvEscaped}", stringsAsFactors = FALSE)
-      gini_data <- setNames(gini_data, c("Country_Name","Country_Code","GINI","Mortality_Rate","GDP"))
-      cat("Dataset loaded:", nrow(gini_data), "countries\n")
-    `);
-    
+
     webRReady = true;
     statusEl.className = 'webr-status ready';
-    statusText.textContent = 'R is ready — dataset loaded with ' + 266 + ' countries';
-    
-    // Enable all run buttons
-    STEPS.forEach(step => {
-      const btn = document.getElementById(`run-btn-${step.num}`);
-      if(btn) btn.disabled = false;
+    statusText.textContent = 'R is ready — 266 countries loaded. Click Run on any step to begin.';
+    STEPS.forEach(s => {
+      const btn = document.getElementById('rb-' + s.num);
+      if (btn) btn.disabled = false;
     });
-    
   } catch(err) {
     statusEl.className = 'webr-status error';
-    statusText.textContent = 'Error loading R: ' + err.message;
+    statusText.textContent = 'Error: ' + err.message;
     console.error(err);
   }
 }
 
-// ── RUN CODE ──────────────────────────────────────────────
-async function runCode(stepNum) {
-  if(!webRReady) return;
-  
-  const cm = window[`cm_${stepNum}`];
-  const code = cm.getValue();
-  const outputEl = document.getElementById(`output-${stepNum}`);
-  const plotEl = document.getElementById(`plot-${stepNum}`);
-  const runBtn = document.getElementById(`run-btn-${stepNum}`);
-  
-  runBtn.disabled = true;
-  runBtn.textContent = '⏳ Running...';
-  outputEl.className = 'output-area show';
-  outputEl.textContent = 'Running...';
-  plotEl.className = 'output-plot';
-  plotEl.innerHTML = '';
-  
-  try {
-    // Capture output
-    const shelter = await new webR.Shelter();
-    
-    // Set up graphics
-    await webR.evalR(`
-      options(device = function(...) {
-        webr::canvas(width = 600, height = 400)
-      })
-    `);
-    
-    const result = await shelter.captureR(code, { withAutoprint: true });
-    
-    // Get text output
-    const output = result.output
-      .filter(o => o.type === 'stdout' || o.type === 'stderr')
-      .map(o => o.data)
-      .join('\n');
-    
-    if(output.trim()) {
-      outputEl.textContent = output;
-      outputEl.className = 'output-area show success-out';
-    } else {
-      outputEl.textContent = '(No text output — check for a plot below)';
-      outputEl.className = 'output-area show';
-    }
-    
-    // Get plots
-    const imgs = await webR.flush();
-    if(imgs && imgs.length > 0) {
-      plotEl.className = 'output-plot show';
-      imgs.forEach(img => {
-        const imgEl = document.createElement('img');
-        imgEl.src = img.data;
-        imgEl.alt = 'R plot output';
-        plotEl.appendChild(imgEl);
-      });
-    }
-    
-    await shelter.purge();
-    
-    // Mark step complete
-    completedSteps.add(stepNum);
-    updateProgress();
-    
-  } catch(err) {
-    outputEl.textContent = 'Error: ' + err.message;
-    outputEl.className = 'output-area show error-out';
-  }
-  
-  runBtn.disabled = false;
-  runBtn.textContent = '▶ Run';
-}
-
-function updateProgress() {
-  const total = STEPS.length;
-  const done = completedSteps.size;
-  const pct = (done / total) * 100;
-  document.getElementById('progress-bar').style.width = pct + '%';
-  document.getElementById('progress-text').textContent = `${done} / ${total} steps completed`;
-}
-
-// ── INIT ──────────────────────────────────────────────────
 buildSteps();
 initWebR();
-
-// Make functions global
-window.showHint = showHint;
-window.runCode = runCode;
 </script>
 </body>
 </html>
